@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="posts">
+        <section class="post">
+            <header class="post-header">
+                <h2 class="post-title">{{ article.title }}</h2>
+                    <p class="post-meta">
+                        Time:  <a class="post-author" href="#">{{ article.release_time|date:"Y /m /d"}}</a>
+                    </p>
+            </header>
+
+                <div class="post-description">
+                    <p>
+                        {{ article.content }}
+                    </p>
+                </div>
+        </section>
+</div>
+<!--<a href="{% url 'blog:edit' article.id %}">修改文章</a>-->
+{% endblock %}

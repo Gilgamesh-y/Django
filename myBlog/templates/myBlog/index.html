@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="posts">
+	{% for article in articles %}
+		<section class="post">
+			<header class="post-header">
+				<h2 class="post-title">
+					<a href="{% url 'blog:article' article.id %}">{{article.title}}</a>
+				</h2>
+				<p class="post-meta">
+					Time:<a href="" class="post-author">{{article.release_time}}</a>
+				</p>
+
+			</header>
+				<div class="post-description">
+					<p>
+						{{article.content}}
+					</p>
+				</div>
+		</section>
+	{% endfor %}
+</div>
+{% endblock %}
